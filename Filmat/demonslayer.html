@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demon Slayer: Infinity Castle</title>
+  <link rel="stylesheet" href="style2.css">
+  <style>
+    .discount-tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #df6400;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 18px;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="../img/cineplex.png" alt="Cineplexx Logo">
+      </div>
+      <nav class="main-nav">
+        <a href="../index.html">FILMA</a>
+        <a href="#">EVENTE</a>
+        <a href="#">KINEMATË</a>
+      </nav>
+      <div class="account-nav">
+        <a href="../login.php"><img src="../img/kyquni.png" alt="Kyçuni"></a>
+        <a href="../signup.php"><img src="../img/regjistrohuni.png" alt="Regjistrohuni"></a>
+      </div>
+    </div>
+  </header>
+
+  <section class="movie-detail">
+
+    <div class="movie-left">
+      <img src="../img/demonslayer.png" alt="Demon Slayer Poster">
+
+      <div class="ticket-box">
+        <h3>Buy Ticket</h3>
+        <div class="ticket-controls">
+          <button class="quantity-btn">-</button>
+          <input type="text" id="quantity" value="1" readonly>
+          <button class="quantity-btn">+</button>
+        </div>
+        <p>Price: <span class="sale-price">$6.00</span></p>
+        <p class="original-price" style="text-decoration: line-through;">$12.50</p>
+        <p id="stock-warning" style="color: red; display:none;"></p>
+        <button class="buy-btn">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="movie-right">
+      <h2>Demon Slayer: Kimetsu no Yaiba – Infinity Castle</h2>
+      <p class="movie-date">Release date: 11.09.2025</p>
+
+      <iframe width="100%" height="315"
+        src="https://www.youtube.com/embed/2MKkj1DQ0NU"
+        title="YouTube trailer"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+
+      <p class="movie-desc" id="description">
+        Tanjiro Kamado – një djalosh i cili iu bashkua një organizate të dedikuar për gjuetinë e demonëve, të quajtur Korpusi i Vrasësve të Demonëve.
+      </p>
+
+      <div id="full-description" class="hidden">
+        <p>
+          Tanjiro Kamado – një djalosh i cili iu bashkua një organizate të dedikuar për gjuetinë e demonëve, të quajtur Korpusi i Vrasësve të Demonëve, pasi motra e tij më e vogël, Nezuko, u kthye në një demon. 
+        </p>
+        <p>
+          Duke u bërë gjithnjë e më i fortë dhe duke thelluar lidhjet dhe miqësitë me anëtarët e tjerë të Korpusit, Tanjiro ka luftuar shumë demonë së bashku me shokët e tij Zenitsu Agatsuma dhe Inosuke Hashibira. 
+        </p>
+        <p>
+          Gjatë udhëtimit të tij, ai është bashkuar në betejë me shpatarët më të lartë të Korpusit Hashira, përfshirë Flame Hashira, Kyojuro Rengoku, në trenin Mugen, Sound Hashira Tengen Uzui, në Entertainment District, si dhe Mist Hashira, Muichiro Tokito, dhe Love Hashira, Mitsuri Kanroji, në fshatin Swordsmith.
+        </p>
+        <p>
+          Ndërsa anëtarët e Korpusit dhe Hashirat janë përfshirë në një program të përbashkët trajnimi fizik, Stërvitja e Hashirave, në përgatitje për betejën e ardhshme kundër demonëve, Muzan Kibutsuji shfaqet në Rezidencën Ubuyashiki. 
+        </p>
+        <p>
+          Me liderin e Korpusit të Vrasësve të Demonëve në rrezik, Tanjiro dhe Hashirat nxitojnë drejt selisë, por bien në një hapësirë misterioze përmes duarve të Muzan Kibutsujit. Destinacioni ku bien Tanjiro dhe Korpusi i Vrasësve të Demonëve është qendra e demonëve – Infinity Castle. 
+        </p>
+        <p>
+          Dhe kështu, fusha e betejës është vendosur, ndërsa beteja përfundimtare mes Korpusit të Vrasësve të Demonëve dhe demonëve fillon.
+        </p>
+      </div>
+
+      <button class="toggle-desc" id="show-more-btn">Trego më shumë</button>
+
+      <div class="movie-details">
+        <h3>Detajet e filmit</h3>
+        <p><strong>Titulli origjinal:</strong> Demon Slayer: Kimetsu no Yaiba – Infinity Castle</p>
+        <p><strong>Filmi fillon:</strong> 11.09.2025</p>
+        <p><strong>Kohëzgjatja:</strong> 2h 35m</p>
+        <p><strong>Aktorë:</strong> Natsuki Hanae, Yoshitsugu Matsuoka, Hiro Shimono, Akari Kitô</p>
+        <p><strong>Regjisori:</strong> Haruo Sotozaki</p>
+        <p><strong>Distributor:</strong> RKS</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>
+      <h3>About Cineplexx</h3>
+      <a href="#">Careers</a>
+      <a href="#">Corporate Social Responsibility</a>
+    </div>
+    <div>
+      <h3>Filma</h3>
+      <a href="#">Top Film</a>
+      <a href="#">Tani ne kinema</a>
+      <a href="#">Vijne se shpejti</a>
+    </div>
+    <div>
+      <h3>Cineplexx details</h3>
+      <a href="#">Order details</a>
+      <a href="#">Returns & exchanges</a>
+      <a href="#">FAQ</a>
+    </div>
+    <div>
+      <h3>Support</h3>
+      <a href="#">Cineplex</a>
+      <a href="#">Cineplex Account</a>
+      <a href="#">Other systems</a>
+      <a href="#">Repairs</a>
+    </div>
+    <div>
+      <h3>Get in Touch</h3>
+      <p>Email: <a href="mailto:cineplexx@gmail.com">cineplexx@gmail.com</a></p>
+      <p>Contact Number: <a href="tel:044601173">044-601-173</a></p>
+    </div>
+    <div>
+      <h3>Community</h3>
+      <a href="#">Community guidelines</a>
+      <a href="#">Online safety principles</a>
+    </div>
+    <div>
+      <h3>Privacy</h3>
+      <a href="#">Privacy policy</a>
+      <a href="#">Cookies and interest-based ads</a>
+    </div>
+  </footer>
+
+  <div class="footer-bottom">
+    <p>© Cineplexx Kosovo L.L.C | Politika e Privatësisë | Informacion Ligjor | Rreth nesh | Na kontaktoni</p>
+    <p>
+      <a href="#">Website feedback</a> | 
+      <a href="#">Terms of Use</a> | 
+      <a href="#">Documents & Policies</a>
+    </p>
+    <p>
+      <a href="#">English (United States)</a>
+    </p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const quantityInput = document.getElementById("quantity");
+      const stockWarning = document.getElementById("stock-warning");
+      const salePriceElement = document.querySelector(".sale-price");
+      const originalPriceElement = document.querySelector(".original-price");
+
+      const unitPrice = 6.0;
+      const oldPrice = 12.50;
+
+      function updatePrice() {
+        let quantity = parseInt(quantityInput.value);
+        let totalPrice = (unitPrice * quantity).toFixed(2);
+        salePriceElement.textContent = `$${totalPrice}`;
+      }
+
+      function oldUpdatedPrice() {
+        let quantity = parseInt(quantityInput.value);
+        let totalPrice = (oldPrice * quantity).toFixed(2);
+        originalPriceElement.textContent = `$${totalPrice}`;
+      }
+
+      function decreaseQuantity() {
+        let currentValue = parseInt(quantityInput.value);
+        if (currentValue > 1) {
+          quantityInput.value = currentValue - 1;
+          updatePrice();
+          oldUpdatedPrice();
+        }
+        updateStockWarning();
+      }
+
+      function increaseQuantity() {
+        let currentValue = parseInt(quantityInput.value);
+        if (currentValue < 5) {
+          quantityInput.value = currentValue + 1;
+          updatePrice();
+          oldUpdatedPrice();
+        }
+        updateStockWarning();
+      }
+
+      function updateStockWarning() {
+        if (quantityInput.value == 5) {
+          stockWarning.style.display = "block";
+          stockWarning.innerText = "Maksimumi i lejuar është 5";
+        } else {
+          stockWarning.style.display = "none";
+        }
+      }
+
+      document.querySelector(".quantity-btn:first-of-type").addEventListener("click", decreaseQuantity);
+      document.querySelector(".quantity-btn:last-of-type").addEventListener("click", increaseQuantity);
+
+      const shortDesc = document.getElementById("description");
+      const fullDesc = document.getElementById("full-description");
+      const btn = document.getElementById("show-more-btn");
+
+      btn.addEventListener("click", () => {
+        if (fullDesc.classList.contains("hidden")) {
+          fullDesc.classList.remove("hidden");
+          btn.textContent = "Trego më pak";
+        } else {
+          fullDesc.classList.add("hidden");
+          btn.textContent = "Trego më shumë";
+          window.scrollTo({ top: shortDesc.offsetTop - 100, behavior: "smooth" });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

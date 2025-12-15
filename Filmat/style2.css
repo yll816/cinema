@@ -1,0 +1,243 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #191919;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #2D2D2D;
+  color: white;
+}
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.left-group {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.logo img {
+  height: 45px;
+}
+.main-nav {
+  display: flex;
+  gap: 20px;
+}
+.main-nav a {
+  color: #A1A1A1;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+}
+.main-nav a:hover {
+  color: white;
+}
+.account-nav img {
+  height: 35px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+  flex: 1;
+}
+.movie-card {
+  background: transparent;
+  text-align: center;
+  color: white;
+}
+.movie-card img {
+  width: 90%;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+.movie-card img:hover {
+  transform: scale(1.05);
+}
+.movie-card h3 {
+  font-size: 16px;
+  margin: 12px 0 5px;
+  text-transform: uppercase;
+}
+.movie-card p {
+  font-size: 14px;
+  color: #ccc;
+  margin: 5px 0 15px;
+}
+.buy-btn {
+  background: #DF1B12;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.buy-btn:hover {
+  background: #DF1B12;
+}
+
+.movie-detail {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  max-width: 1200px;
+  margin: 40px auto;
+  gap: 30px;
+  padding: 20px;
+  background: #2D2D2D;
+  border-radius: 10px;
+}
+
+.movie-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.movie-left img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.ticket-box {
+  background: #191919;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+
+.ticket-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.ticket-controls input {
+  width: 40px;
+  text-align: center;
+  background: #2D2D2D;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.quantity-btn {
+  background: #DF1B12;
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.quantity-btn:hover {
+  background: #DF1B12;
+}
+
+.ticket-box p {
+  margin: 5px 0;
+}
+
+.movie-right {
+  color: white;
+}
+
+.movie-right h2 {
+  margin-top: 0;
+}
+
+.movie-date {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.movie-desc {
+  margin: 15px 0;
+  line-height: 1.5;
+}
+
+.movie-desc.short {
+  max-height: 50px;
+  overflow: hidden;
+}
+.movie-desc.expanded {
+  max-height: none;
+}
+
+.toggle-desc {
+  background: transparent;
+  border: 1px solid #DF1B12;
+  color: #DF1B12;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.toggle-desc:hover {
+  background: #DF1B12;
+  color: white;
+}
+
+
+footer {
+  background: #2D2D2D;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+footer div {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+footer h3 {
+  margin-top: 0;
+  font-size: 1.2em;
+  color: white;
+}
+footer a {
+  display: block;
+  color: #A1A1A1;
+  text-decoration: none;
+  margin: 5px 0;
+}
+footer a:hover {
+  color: white;
+}
+.footer-bottom {
+  background: #191919;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+}
+.footer-bottom a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+
+
+.hidden {
+  display: none;
+}
