@@ -1,6 +1,7 @@
 CREATE DATABASE IF NOT EXISTS cinema_db;
 USE cinema_db;
 
+-- USERS (same as yours, unchanged)
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     emri VARCHAR(50) NOT NULL,
@@ -14,37 +15,36 @@ CREATE TABLE IF NOT EXISTS users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Default Admin Account (username: admin / password: admin123)
-INSERT INTO users (emri, mbiemri, adresa, email, tel, username, password, role)
-VALUES (
-    'Admin', 
-    'Account', 
-    'None', 
-    'admin@cinema.com', 
-    '00000000',
-    'admin',
-    '$2y$10$WzQvZdGJVLjEMwBqF4WKOu6SpaS8ZI1sC6sxcSPejruv9desqjb3y', 
-    'admin'
-);
-
-
+-- MOVIES
 CREATE TABLE IF NOT EXISTS movies (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(100) NOT NULL,
-    description TEXT NOT NULL,
+    description TEXT,
     image_path VARCHAR(255),
-    price DECIMAL(5,2) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    price DECIMAL(6,2) NOT NULL
 );
 
+-- 🎬 MOVIE SHOWTIMES (NEW)
+CREATE TABLE IF NOT EXISTS showtimes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    movie_id INT NOT NULL,
+    show_time TIME NOT NULL,
+
+    FOREIGN KEY (movie_id) REFERENCES movies(id) ON DELETE CASCADE
+);
+
+-- 🎟️ TICKETS (IMPROVED)
 CREATE TABLE IF NOT EXISTS tickets (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     movie_id INT NOT NULL,
-    quantity INT DEFAULT 1,
-    total_price DECIMAL(6,2) NOT NULL,
+    showtime_id INT NOT NULL,
+    ticket_name VARCHAR(100) NOT NULL, -- UNIQUE NAME
+    quantity INT NOT NULL,
+    total_price DECIMAL(7,2) NOT NULL,
     purchased_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
-    FOREIGN KEY (movie_id) REFERENCES movies(id) ON DELETE CASCADE
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (movie_id) REFERENCES movies(id),
+    FOREIGN KEY (showtime_id) REFERENCES showtimes(id)
 );

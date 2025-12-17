@@ -149,34 +149,40 @@ $moviesResult = mysqli_query($conn, $moviesQuery);
     </div>
 
     <!-- MOVIES -->
-    <h1 style="margin-top:60px;">Lista e Filmave</h1>
+    <h1 style="margin-top:60px;">Lista e Biletave</h1>
 
-    <div class="users-table">
-        <table>
+<div class="users-table">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Emri Bilete</th>
+            <th>Filmi</th>
+            <th>Ora e Shfaqjes</th>
+            <th>Sasia</th>
+            <th>Çmimi Total</th>
+            <th>Data e Blerjes</th>
+            <th>Veprime</th>
+        </tr>
+
+        <?php
+        // Assuming $conn is your mysqli connection
+        $ticketsResult = mysqli_query($conn, "SELECT * FROM tickets ORDER BY created_at DESC");
+
+        while($ticket = mysqli_fetch_assoc($ticketsResult)) { ?>
             <tr>
-                <th>ID</th>
-                <th>Poster</th>
-                <th>Titulli</th>
-                <th>Përshkrimi</th>
-                <th>Çmimi</th>
-                <th>Data</th>
-                <th>Veprime</th>
+                <td><?= $ticket['id'] ?></td>
+                <td><?= htmlspecialchars($ticket['ticket_name']) ?></td>
+                <td><?= htmlspecialchars($ticket['movie_title']) ?></td>
+                <td><?= htmlspecialchars($ticket['show_time']) ?></td>
+                <td><?= $ticket['quantity'] ?></td>
+                <td><?= $ticket['total_price'] ?> €</td>
+                <td><?= $ticket['created_at'] ?></td>
+                <td>
+                    <a class="delete-btn" href="delete_ticket.php?id=<?= $ticket['id'] ?>">
+                        Fshi
+                    </a>
+                </td>
             </tr>
-
-            <?php while($movie = mysqli_fetch_assoc($moviesResult)) { ?>
-                <tr>
-                    <td><?= $movie['id'] ?></td>
-                    <td><img src="<?= $movie['image_path'] ?>"></td>
-                    <td><?= $movie['title'] ?></td>
-                    <td><?= $movie['description'] ?></td>
-                    <td><?= $movie['price'] ?> €</td>
-                    <td><?= $movie['created_at'] ?></td>
-                    <td>
-                        <a class="delete-btn" href="delete_movie.php?id=<?= $movie['id'] ?>">
-                            Fshi
-                        </a>
-                    </td>
-                </tr>
             <?php } ?>
         </table>
     </div>
